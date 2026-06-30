@@ -5,44 +5,33 @@
 
 ## Overview
 
-This project provides an **end-to-end automated system** for detecting and classifying White Blood Cells (WBCs) from microscopic blood smear images. It replaces the tedious manual counting process with AI, delivering a detailed diagnostic report instantly.
+This project provides an _end-to-end automated system_ for detecting and classifying White Blood Cells (WBCs) from microscopic blood smear images. It replaces the tedious manual counting process with AI, delivering a detailed diagnostic report instantly.
 
-- **Detection**: YOLOv8 localizes all WBCs in the image.
-- **Classification**: EfficientNet-B0 classifies each WBC into one of four subtypes:
+- _Detection_: YOLOv8 localizes all WBCs in the image.
+- _Classification_: EfficientNet-B0 classifies each WBC into one of four subtypes:
   - Neutrophil
   - Lymphocyte
   - Monocyte
   - Eosinophil
-- **Web Application**: A professional web interface (Django + FastAPI) allows clinicians to upload images and receive a structured report (counts, N/L ratio, medical interpretation).
+- _Web Application_: A professional web interface (Django + FastAPI) allows clinicians to upload images and receive a structured report (counts, N/L ratio, medical interpretation).
 
-## Architecture
+## 🖥️ Web Application - User Interface
 
-The project is built with a **decoupled microservice architecture** to ensure scalability and reliability:
+The web application allows doctors to upload a microscopic image and instantly obtain a comprehensive analysis report.
 
-1. **FastAPI Server** (Port `8001`): Loads the AI models (YOLO + EfficientNet) and exposes a `/predict` endpoint.
-2. **Django Server** (Port `8000`): Hosts the web interface, handles user uploads, and communicates with the FastAPI backend.
+### 📤 Step 1: Image Upload
 
-## Project Structure
+The user selects an image (JPG/PNG format) via the simple interface.
 
-```text
-blood/
-├── api/                    # FastAPI inference server
-│   └── main.py
-├── blood_site/             # Django project settings
-├── analyzer/               # Django app (views, uploads)
-├── config/                 # YAML configuration files
-├── src/                    # Core source code
-│   ├── data/               # Dataset loaders & preprocessing
-│   ├── models/             # YOLO & EfficientNet definitions
-│   ├── training/           # Training loops & metrics
-│   ├── inference/          # Full pipeline (detection + classification)
-│   └── evaluation/         # Evaluation scripts
-├── scripts/                # Executable scripts (training, evaluation)
-├── notebooks/              # Jupyter notebooks (EDA, visualization)
-├── templates/              # HTML templates for Django
-├── outputs/                # (Ignored) Saved models and predictions
-├── data/                   # (Ignored) Raw & processed datasets
-├── requirements.txt        # Python dependencies
-├── .gitignore
-└── README.md
-```
+![Upload Interface](results/example.JPG)
+
+### 📊 Step 2: Analysis Result
+
+The image is automatically analyzed by the AI. White blood cells are outlined in different colors according to their type (Monocytes, Lymphocytes, etc.). A detailed report is displayed with:
+
+- Total WBC count
+- Count by type (Neutrophils, Monocytes, Lymphocytes, Eosinophils)
+- Neutrophil/Lymphocyte (N/L) ratio
+- Automatic medical interpretation
+
+![Analysis Result](results/result.JPG)
