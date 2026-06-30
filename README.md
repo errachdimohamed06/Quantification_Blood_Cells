@@ -23,7 +23,7 @@ The web application allows doctors to upload a microscopic image and instantly o
 
 The user selects an image (JPG/PNG format) via the simple interface.
 
-![Upload Interface](results/example.JPG)
+![Upload Interface](results/example.jpeg)
 
 ### 📊 Step 2: Analysis Result
 
@@ -34,4 +34,4 @@ The image is automatically analyzed by the AI. White blood cells are outlined in
 - Neutrophil/Lymphocyte (N/L) ratio
 - Automatic medical interpretation
 
-![Analysis Result](results/result.JPG)
+![Analysis Result](results/result.jpeg)
