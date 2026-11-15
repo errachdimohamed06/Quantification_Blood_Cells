@@ -21,7 +21,7 @@ The web application allows doctors to upload a microscopic image and instantly o
 
 ### 📤 Step 1: Image Upload
 
-The user selects an image (JPG/PNG format) via the simple interface.
+The user selects an image (JPG/PNG/TIF format) via the simple interface.
 
 ![Upload Interface](results/example.jpeg)
 
