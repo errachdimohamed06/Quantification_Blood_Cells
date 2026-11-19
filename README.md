@@ -5,7 +5,7 @@
 
 ## Overview
 
-This project provides an _end-to-end automated system_ for detecting and classifying White Blood Cells (WBCs) from microscopic blood smear images. It replaces the tedious manual counting process with AI, delivering a detailed diagnostic report instantly.
+This project provides an _end-to-end automated system_ for detecting and classifying White Blood Cells (WBC) from microscopic blood smear images. It replaces the tedious manual counting process with AI, delivering a detailed diagnostic report instantly.
 
 - _Detection_: YOLOv8 localizes all WBCs in the image.
 - _Classification_: EfficientNet-B0 classifies each WBC into one of four subtypes:
